@@ -14,3 +14,8 @@ ENV PHP_FPM_MAX_REQUESTS="1000"
 
 # Copy the PHP-FPM configuration file
 COPY ./www.conf /usr/local/etc/php-fpm.d/www.conf
+
+EXPOSE $PHP_FPM_PORT
+
+# Run PHP-FPM
+CMD ["php-fpm"]
