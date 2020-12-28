@@ -1,4 +1,5 @@
 FROM php:7.4-fpm
+MAINTAINER tech@ascetic.io
 
 # PHP-FPM defaults
 ENV PHP_FPM_USER="www-data"
