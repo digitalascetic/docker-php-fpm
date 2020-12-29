@@ -1,4 +1,6 @@
-FROM php:7.4-fpm
+ARG DEFAULT_PHP_VERSION=7.4
+
+FROM php:${DEFAULT_PHP_VERSION}-fpm-alpine
 MAINTAINER tech@ascetic.io
 
 # PHP-FPM defaults
@@ -13,9 +15,6 @@ ENV PHP_FPM_MAX_SPARE_SERVERS="2"
 ENV PHP_FPM_MAX_REQUESTS="1000"
 
 # Copy the PHP-FPM configuration file
-COPY ./www.conf /usr/local/etc/php-fpm.d/www.conf
+COPY ./conf/www.conf /usr/local/etc/php-fpm.d/www.conf
 
 EXPOSE $PHP_FPM_PORT
-
-# Run PHP-FPM
-CMD ["php-fpm"]
