@@ -14,6 +14,8 @@ ENV PHP_FPM_MIN_SPARE_SERVERS="1"
 ENV PHP_FPM_MAX_SPARE_SERVERS="2"
 ENV PHP_FPM_MAX_REQUESTS="1000"
 
+RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
+
 # Copy the PHP-FPM configuration file
 COPY ./conf/www.conf /usr/local/etc/php-fpm.d/www.conf
 
