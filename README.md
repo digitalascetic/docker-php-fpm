@@ -16,6 +16,12 @@ ENV PHP_FPM_MAX_SPARE_SERVERS="2"
 ENV PHP_FPM_MAX_REQUESTS="1000"
 ```
 
+### PHP packages enabled
+- zip & bz2
+- intl
+- ssl
+- bcmath
+- mysqli & pdo_mysql
 
 ### Build
 ```
